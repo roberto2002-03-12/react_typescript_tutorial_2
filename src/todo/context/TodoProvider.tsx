@@ -24,8 +24,12 @@ const initialState: ITodoState = {
 export const TodoProvider = ({ children }: ITodoProviderProps) => {
   const [todoState, dispatch] = useReducer(todoReducer, initialState);
   
+  const toggleTodo = (id: string) => {
+    dispatch({ type: 'toggleTodo', payload: { id } })
+  };
+  
   return (
-    <TodoContext.Provider value={{ todoState }}>
+    <TodoContext.Provider value={{ todoState, toggleTodo }}>
       { children }
     </TodoContext.Provider>
   )

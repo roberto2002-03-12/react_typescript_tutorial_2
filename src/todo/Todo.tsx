@@ -1,10 +1,13 @@
 import { TodoProvider } from './context/TodoProvider';
 import { TodoList } from './components/TodoList'
+import { Title } from './components/Title';
 
 export const Todo = () => {
+  // const { pendingTodos } = useTodos()
+
   return (
     <TodoProvider>
-      <div>Todo: </div>
+      <Title />
       <TodoList />
     </TodoProvider>
   )
